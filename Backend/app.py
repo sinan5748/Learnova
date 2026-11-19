@@ -24,7 +24,7 @@ GEMINI_MODEL = "gemini-3.5-flash-lite"
 app = Flask(__name__)
 
 FRONTEND_FOLDER = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "frontend"))
+    os.path.join(os.path.dirname(__file__), "..", "Frontend"))
 
 UPLOAD_FOLDER = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "uploads")
