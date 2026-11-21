@@ -35,6 +35,17 @@ UPLOAD_FOLDER = os.path.abspath(
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+def get_user_upload_folder():
+    if "user_id" not in session:
+        session["user_id"] = str(uuid.uuid4())
+
+    user_folder = os.path.join(
+        app.config["UPLOAD_FOLDER"],
+        session["user_id"]
+    )
+
+    os.makedirs(user_folder, exist_ok=True)
+    return user_folder
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB
 
 @app.route("/")
