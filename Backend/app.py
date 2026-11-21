@@ -23,6 +23,7 @@ client = genai.Client(
 GEMINI_MODEL = "gemini-3.5-flash-lite"
 
 app = Flask(__name__)
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
 FRONTEND_FOLDER = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "Frontend"))
