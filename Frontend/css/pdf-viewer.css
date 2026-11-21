@@ -1137,3 +1137,34 @@ button.study-feature-card:hover {
 
 }
 
+/* Mobile MCQ option alignment */
+@media (max-width: 576px) {
+
+    #mcqResult .mcq-option {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 12px;
+    }
+
+    #mcqResult .mcq-option input[type="radio"] {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    #mcqResult .mcq-option span {
+        display: block;
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.5;
+    }
+
+}
