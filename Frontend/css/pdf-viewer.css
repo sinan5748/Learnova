@@ -1171,14 +1171,51 @@ button.study-feature-card:hover {
 
 @media (max-width: 576px) {
 
+    /* Two feature cards per row */
     .study-features .row > [class*="col-"] {
         flex: 0 0 50%;
         max-width: 50%;
+        padding-left: 6px;
+        padding-right: 6px;
     }
 
+    /* Compact card layout */
     .study-feature-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
         width: 100%;
-        height: 100%;
+        box-sizing: border-box;
     }
 
+    /* Smaller icon */
+    .study-feature-icon {
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .study-feature-icon span {
+        font-size: 22px !important;
+    }
+
+    /* Give text the remaining width */
+    .study-feature-content {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+    }
+
+    .study-feature-content h4,
+    .study-feature-content h5 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .study-feature-content p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
 }
