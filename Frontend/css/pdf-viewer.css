@@ -1087,3 +1087,33 @@ button.study-feature-card:hover {
 
 }
 
+/* Improve PDF Summary readability */
+#summaryResult {
+    line-height: 1.6;
+}
+
+#summaryResult p {
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+#summaryResult li {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+#summaryResult h1,
+#summaryResult h2,
+#summaryResult h3,
+#summaryResult h4 {
+    line-height: 1.4;
+    margin-top: 22px;
+    margin-bottom: 14px;
+}
+
+#summaryResult ul,
+#summaryResult ol {
+    padding-left: 30px;
+    margin-bottom: 18px;
+}
+
