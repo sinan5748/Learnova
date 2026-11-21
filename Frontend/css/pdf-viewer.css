@@ -1168,3 +1168,17 @@ button.study-feature-card:hover {
     }
 
 }
+
+@media (max-width: 576px) {
+
+    .study-features .row > [class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .study-feature-card {
+        width: 100%;
+        height: 100%;
+    }
+
+}
