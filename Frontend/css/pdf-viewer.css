@@ -278,21 +278,21 @@
         min-width: 48px;
         font-size: 24px;
     }
-   /* Improve PDF Summary width on mobile */
-   #summarySection {
-       padding: 15px;
-   }
+  #summarySection {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+    box-sizing: border-box;
+}
 
-   /* Make PDF Summary result use full available width */
-   #summaryResult {
-       display: block;
-       width: 100% !important;
-       max-width: none !important;
-       margin-left: 0 !important;
-       margin-right: 0 !important;
-       box-sizing: border-box;
-       padding: 12px;
-   }
+#summaryResult {
+    width: 100%;
+    max-width: none;
+    padding: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
    /* Use full screen width for PDF Study Assistant */
    .pdf-viewer-section {
        padding-left: 0 !important;
