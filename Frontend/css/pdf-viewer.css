@@ -278,13 +278,17 @@
         min-width: 48px;
         font-size: 24px;
     }
-       /* Make AI Answer wider on mobile */
-    .chat-answer {
-        width: calc(100% + 20px);
-        margin-left: -10px;
-        box-sizing: border-box;
-        padding: 18px 16px;
-    }
+   /* Improve PDF Summary width on mobile */
+   #summarySection {
+       padding: 15px;
+   }
+
+   #summaryResult {
+       width: 100%;
+       box-sizing: border-box;
+       padding: 12px;
+       margin-top: 15px;
+   }
 }
 
 
