@@ -74,7 +74,7 @@ def upload_pdf():
     if not filename:
         return jsonify({"error": "Invalid filename"}), 400
 
-    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    filepath = os.path.join(get_user_upload_folder(), filename)
 
     file.save(filepath)
 
