@@ -99,16 +99,18 @@ def upload_pdf():
         os.remove(filepath)
         return jsonify({"error": "Unable to read this PDF file"}), 400
 
+
 @app.route("/documents", methods=["GET"])
 def get_documents():
 
+    user_folder = get_user_upload_folder()
     documents = []
 
-    for filename in os.listdir(UPLOAD_FOLDER):
+    for filename in os.listdir(user_folder):
 
         if filename.lower().endswith(".pdf"):
 
-            filepath = os.path.join(UPLOAD_FOLDER, filename)
+            filepath = os.path.join(user_folder, filename)
 
             documents.append({
                 "filename": filename,
@@ -117,20 +119,26 @@ def get_documents():
 
     return jsonify({"documents": documents})
 
-@app.route("/documents/<path:filename>")
+
+@app.route("/documents/<filename>")
 def open_document(filename):
 
+    filename = secure_filename(filename)
+    user_folder = get_user_upload_folder()
+
     return send_from_directory(
-        UPLOAD_FOLDER,
+        user_folder,
         filename,
         mimetype="application/pdf"
     )
 
-@app.route("/documents/<path:filename>/load", methods=["GET"])
+
+@app.route("/documents/<filename>/load", methods=["GET"])
 def load_document(filename):
 
     filename = secure_filename(filename)
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    user_folder = get_user_upload_folder()
+    filepath = os.path.join(user_folder, filename)
 
     if not os.path.isfile(filepath):
         return jsonify({"error": "Document not found"}), 404
@@ -155,11 +163,13 @@ def load_document(filename):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/documents/<path:filename>", methods=["DELETE"])
+
+@app.route("/documents/<filename>", methods=["DELETE"])
 def delete_document(filename):
 
     filename = secure_filename(filename)
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    user_folder = get_user_upload_folder()
+    filepath = os.path.join(user_folder, filename)
 
     if not os.path.isfile(filepath):
         return jsonify({"error": "Document not found"}), 404
@@ -169,6 +179,7 @@ def delete_document(filename):
     return jsonify({
         "message": "Document deleted successfully"
     })
+
 
 @app.route("/test-gemini")
 def test_gemini():
