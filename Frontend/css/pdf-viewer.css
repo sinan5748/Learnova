@@ -283,11 +283,15 @@
        padding: 15px;
    }
 
+   /* Make PDF Summary result use full available width */
    #summaryResult {
-       width: 100%;
+       display: block;
+       width: 100% !important;
+       max-width: none !important;
+       margin-left: 0 !important;
+       margin-right: 0 !important;
        box-sizing: border-box;
        padding: 12px;
-       margin-top: 15px;
    }
    /* Use full screen width for PDF Study Assistant */
    .pdf-viewer-section {
