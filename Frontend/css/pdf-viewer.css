@@ -278,6 +278,13 @@
         min-width: 48px;
         font-size: 24px;
     }
+       /* Make AI Answer wider on mobile */
+    .chat-answer {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        box-sizing: border-box;
+        padding: 18px 16px;
+    }
 }
 
 
