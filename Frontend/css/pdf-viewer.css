@@ -289,6 +289,24 @@
        padding: 12px;
        margin-top: 15px;
    }
+   /* Use full screen width for PDF Study Assistant */
+   .pdf-viewer-section {
+       padding-left: 0 !important;
+       padding-right: 0 !important;
+   }
+   
+   .pdf-viewer-section .container {
+       width: 100% !important;
+       max-width: 100% !important;
+       padding-left: 10px !important;
+       padding-right: 10px !important;
+   }
+   
+   .chat-answer {
+       width: 100%;
+       margin-left: 0;
+       box-sizing: border-box;
+   }
 }
 
 
