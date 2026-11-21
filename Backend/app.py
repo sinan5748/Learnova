@@ -1,5 +1,6 @@
 
-from flask import Flask, send_from_directory, request, jsonify
+from flask import Flask, send_from_directory, request, jsonify, session
+import uuid
 import json
 import os
 import pymupdf
