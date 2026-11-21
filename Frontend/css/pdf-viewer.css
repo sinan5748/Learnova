@@ -1057,4 +1057,32 @@ button.study-feature-card:hover {
     }
 
 }
+@media (max-width: 576px) {
+
+    #pdfViewer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #pdfViewer .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    #summarySection {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #summaryResult {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #summaryResult > * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
 
