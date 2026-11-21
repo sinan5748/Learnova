@@ -24,6 +24,11 @@ GEMINI_MODEL = "gemini-3.5-flash-lite"
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+    SESSION_COOKIE_SECURE=True
+)
 
 FRONTEND_FOLDER = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "Frontend"))
